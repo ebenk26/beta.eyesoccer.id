@@ -5,6 +5,7 @@ class Eyeprofile extends CI_Controller {
 
 	public function __construct(){
         parent::__construct();
+			// direct_m();
 		   // $this->load->model('Eyemarket_model');
 			date_default_timezone_set('Asia/Jakarta');
 			$this->load->model('Master_model','mod');
@@ -402,7 +403,7 @@ class Eyeprofile extends CI_Controller {
 							if($main['logo_club'] == ""){
 								$main['logo_club'] = "7288LOGO UNTUK APLIKASI.jpg";
 							}
-						echo '<img src="'.imgUrl().'/systems/club_logo/'.$main['logo_club'].'" alt="">';
+						echo '<img src="'.imgUrl().'systems/club_logo/'.$main['logo_club'].'" alt="">';
 						echo '<div class="detail">';
 							echo '<h2>'.$main['nama_club'].'</h2>';
 							echo '<h3>'.$main['competition'].'</h3>';

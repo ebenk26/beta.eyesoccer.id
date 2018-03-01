@@ -5,6 +5,7 @@ class Eyeme extends CI_Controller {
 
 	public function __construct(){
         parent::__construct();
+			// direct_m();
         	#sw::begin 
 		    $this->load->model('Eyemarket_model');
 		    $this->load->model('Eyeme_model','emod');
@@ -98,6 +99,7 @@ class Eyeme extends CI_Controller {
 			//get Image 
 			$whereImg = array('id_member'=> $usr->id_member,'active'=> '1');
 			$getImg  		= $this->mod->getAll('me_img',$whereImg,'',array('last_update'=>'DESC'));
+
 			//get following 
 			$whereFollowing = array('id_member'=> $usr->id_member,'block'=> '0');
 			$getFollowing   = $this->mod->getAll('me_follow',$whereFollowing);
@@ -436,11 +438,12 @@ class Eyeme extends CI_Controller {
 		$where = array('id_img'=> $id_img);
 		$img = $this->mod->getAll('me_img',$where,array('id_img','img_name','img_thumb'));
 		
+		
 		if(count($img) > 0 ){
 			$imgName = $img[0]->img_name;
 			$imgThumb = $img[0]->img_thumb;
 			$id_img   = $img[0]->id_img;
-			unlink(IMGPATH.$imgName) OR die ('gagal delete image');
+			unlink(MEFOLDER.'/'.$imgName) OR die ('gagal delete image');
 			
 			$this->emod->rm('me_img',array('id_img'=> $id_img));
 			$arr = array('msg'=> 'Berhasil Hapus Photo');
