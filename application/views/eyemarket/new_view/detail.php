@@ -127,7 +127,7 @@
                             ?>
                                     <a href="<?= base_url(); ?>home/login?page=<?= uri_string(); ?>" class="btn btn-template-main">
                                         <span>
-                                            <i class="fa fa-shopping-cart"></i> Add to cart 
+                                            <i class="fa fa-shopping-cart"></i> Available Soon 
                                         </span>
                                     </a>
                                         <?php /*
@@ -159,11 +159,14 @@
                                 else
                                 {
                             ?>
-                                    <a href="#" data-toggle="modal" data-target="#chart-modal" class="btn btn-template-main">
+                                    <!-- <a href="#" data-toggle="modal" data-target="#chart-modal" class="btn btn-template-main">
                                         <span>
                                             <i class="fa fa-shopping-cart"></i> Add to chart
                                         </span>
-                                    </a>
+                                    </a> -->
+                                        <span class="btn btn-template-main">
+                                            <i class="fa fa-shopping-cart"></i> Available Soon
+                                        </span>
                                         <?php /*
                                             if ($data["harga"] != 0)
                                             {
